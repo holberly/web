@@ -1,4 +1,5 @@
 //liste des profils
+//lol
 var listeProfils = {};
 
 //Constructeur pour les PositionsProfil
