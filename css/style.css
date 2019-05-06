@@ -1,0 +1,78 @@
+.espace{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.deco{
+    background-color: blue !important;
+}
+
+.badge{
+    padding-top: 1.2%;
+    background-color : #4ea283;
+}
+
+h5{
+    text-transform: uppercase;
+    color : #4ea283;
+}
+
+h3{
+    text-transform: uppercase;
+}
+
+.colore{
+    background-color : #4ea283;
+    color: white;
+}
+
+.btn-color{
+    color: #4ea283;
+    border-color: #4ea283;
+    background-color: white;
+}
+
+.btn-color:active,.btn-color:hover{
+    color: white;
+    background-color: #4ea283;
+}
+
+.rond{
+    border-radius: 15px;
+}
+.popup{
+    background-color: #f8f8f8;
+    margin-left: 5px;
+    margin-top:5px;
+    width: 750px;
+    height: 300px;
+}
+
+.popupins{
+    background-color: #f8f8f8;
+    margin-left: 5px;
+    margin-top:5px;
+    width: 750px;
+    height: 400px;
+}
+
+
+.map-container-6{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-container-6 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+
+.contact{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}

@@ -1,0 +1,12 @@
+<table>
+    <tr><th>Prenom</th><th>Nom</th><th>Test</th><th></th></tr>
+    <tr ng-repeat="item in profils.profils">
+        <td>{{item.prenom}}</td>
+        <td>{{item.adresse}}</td>
+        <td>{{item.mail}}</td>
+        <td><button ng-click="modifier()">Modifier</button></td>
+        <td><button ng-click="supprimer()">Supprimer</button></td>
+    </tr>
+</table>
+
+{{profils.profils.adresse}}
