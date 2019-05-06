@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c79c8b33-718b-4b12-9d35-8bf2e8bb47fb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modele/node.js" beforeDir="false" afterPath="$PROJECT_DIR$/modele/node.js" afterDir="false" />
-    </list>
+    <list default="true" id="c79c8b33-718b-4b12-9d35-8bf2e8bb47fb" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -37,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modele/node.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <state relative-caret-position="105">
+              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -201,7 +198,7 @@
       <workItem from="1556964823114" duration="2660000" />
       <workItem from="1557001830057" duration="7299000" />
       <workItem from="1557143647507" duration="427000" />
-      <workItem from="1557146731801" duration="2818000" />
+      <workItem from="1557146731801" duration="2925000" />
     </task>
     <task id="LOCAL-00001" summary="main essai 2 ash">
       <created>1557149863972</created>
@@ -210,11 +207,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557149863972</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="node essai 2 ash">
+      <created>1557149967794</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557149967794</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24772000" />
+    <option name="totallyTimeSpent" value="24879000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -227,9 +231,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1486" height="1056" extended-state="4" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24128503" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24128503" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Messages" sideWeight="0.49965823" weight="0.32938644" />
@@ -241,9 +244,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49964765" weight="0.32916668" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989747" visible="true" weight="0.32938644" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.29254955" weight="0.24327233" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010253" side_tool="true" visible="true" weight="0.32938644" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989747" weight="0.32938644" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.29186603" visible="true" weight="0.24327233" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.708134" side_tool="true" visible="true" weight="0.24327233" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -290,7 +293,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="main essai 2 ash" />
-    <option name="LAST_COMMIT_MESSAGE" value="main essai 2 ash" />
+    <MESSAGE value="node essai 2 ash" />
+    <option name="LAST_COMMIT_MESSAGE" value="node essai 2 ash" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css">
@@ -390,8 +394,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modele/node.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        <state relative-caret-position="105">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
