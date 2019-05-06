@@ -1,4 +1,4 @@
-//L'application requiert l'utilisation du module Express.
+//L'application a besoin de l'utilisation du module Express.
 //La variable express nous permettra d'utiliser les fonctionnalités du module Express.
 var express = require('express');
 
