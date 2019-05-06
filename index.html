@@ -39,14 +39,14 @@
                            <a class="nav-link" href="#/contact">Contact</a>
                         </li>
                         <li class="nav-item" ng-controller='menuController'>
-                            <a class="nav-link" ng-if='!connected()' ng-click="clickToSignIn()" href="">Inscription</a>
+                            <a class="nav-link"  ng-click="clickToSignIn()" href="">Inscription</a>
                         </li>
                         <li class="nav-item" ng-controller="menuController">
                             <a class="nav-link" ng-if='!connected()' href="">Mon espace</a>
                             <!-- <a class="nav-link" href="javascript:ouvre_popup('html/connexion.html')">  Mon espace  </a> -->
                         </li>
                         <li class="nav-item" ng-controller="menuController">
-                            <a class="nav-link" ng-if='connected()' href="">Deconnexion</a>
+                            <a class="nav-link" ng-if='connected()' ng-click="deconnexion()" href="">Deconnexion</a>
                         </li>
                         <li class="nav-item" ng-controller="menuController">
                             <a class="nav-link" ng-if='private()' href="#/listeprofil">Liste des profils</a>

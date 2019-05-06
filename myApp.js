@@ -6,7 +6,7 @@ miageApp.config(function($routeProvider) {
     $routeProvider
     //route pour la page d'accueil
         .when('/', {
-            templateUrl : '/home.html',
+            templateUrl : 'views/home.html',
             controller  : 'mainController',
             resolve:{
                 anchorname:function(){
@@ -55,7 +55,7 @@ miageApp.config(function($routeProvider) {
 
         //si une autre URL est demandée alors on va rediriger vers la page d'accueil
         .otherwise({
-            redirectTo: '/home'
+            redirectTo: '/'
         })
 });
 
@@ -70,25 +70,42 @@ miageApp.controller('contactController', function($scope) {
 
 });
 
-miageApp.controller('signinController', function ($scope, ngDialog) {
+miageApp.controller('signinController', function ($scope, ngDialog, $cookieStore) {
     $scope.test = 'test';
     $scope.clickToSignIn = function(){
+        $cookieStore.put("connected", "true");
+        console.log('tgpute');
         ngDialog.open({
             template : 'views/inscription.html'
         });
     };
+    $cookieStore.put("connected", "true");
 });
 
-miageApp.controller('loginController', function ($scope) {
-
+miageApp.controller('loginController', function ($scope, $cookieStore) {
+    $cookieStore.put("connected", "true");
 });
 
-miageApp.controller('menuController', function($scope, $cookieStore){
+miageApp.controller('menuController', function($scope, $cookieStore, $location, ngDialoggit ){
     $scope.private = function(){
         return $cookieStore.get("authorisation")!=='user';
     };
     $scope.connected = function(){
-        return $cookieStore.get("connected")!=="true";
+        return $cookieStore.get("connected")==="true";
+    };
+    $scope.deconnexion = function(){
+        if($cookieStore.get("connected")===true){
+            console.log('test');
+            $cookieStore.put("connected", "false");
+        }
+        $location.path('view/index.html');
+    };
+    $scope.clickToSignIn = function(){
+        $cookieStore.put("connected", "true");
+        console.log('tgpute');
+        ngDialog.open({
+            template : 'views/inscription.html'
+        });
     };
 });
 
