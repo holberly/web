@@ -86,7 +86,7 @@ miageApp.controller('loginController', function ($scope, $cookieStore) {
     $cookieStore.put("connected", "true");
 });
 
-miageApp.controller('menuController', function($scope, $cookieStore, $location, ngDialoggit ){
+miageApp.controller('menuController', function($scope, $cookieStore, $location, ngDialog){
     $scope.private = function(){
         return $cookieStore.get("authorisation")!=='user';
     };
