@@ -47,11 +47,8 @@ var createProfil = function(role,nom,prenom,adresse,mail,telephone){
  */
 var getlistProfil = function(role){
     var liste = [];
-    console.log("role"+role);
     for(var i=0;i<profils.length;i++){
-        console.log("ah"+profils[i].role);
         if(profils[i].role===role){
-            console.log("oh");
             liste.push(profils[i]);
         }
     }
