@@ -49,7 +49,7 @@ miageApp.config(function($routeProvider) {
         })
 
         .when('/listeprofil',{
-            templateUrl: '/listeProfils.html',
+            templateUrl: '/views/listeProfils.html',
             controller : 'listeProfilsController'
         })
 
@@ -103,7 +103,7 @@ miageApp.controller('loginController', function ($scope, $cookieStore, ngDialog)
 
 miageApp.controller('menuController', function($scope, $cookieStore, $location, ngDialog){
     $scope.private = function(){
-        return $cookieStore.get("authorisation")==='user';
+        return $cookieStore.get("role")==='collaborateur';
     };
     $scope.connected = function(){
         return $cookieStore.get("connected")==="true";
@@ -134,7 +134,7 @@ miageApp.controller('menuController', function($scope, $cookieStore, $location, 
 
 miageApp.controller('listeProfilsController', function($scope, $http){
     /// ATTENTION METTRE LIEN NODEJS
-    $http.get("/api/profilListe",{"role":"non_miagiste"}).then(function(response) {
-        console.log(response.data);
+    $http.get("/api/listeprofils").then(function(response) {
+        $scope.profils = response.data;
     });
 });

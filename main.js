@@ -21,7 +21,6 @@ function isEmptyObject(obj) {
 app.post('/api/inscription', function(req, res)
 {
     var profil = Profil.createProfil(req.body.role, req.body.nom, req.body.prenom, req.body.adresse, req.body.mail,req.body.tel);
-    console.log(req.body.mail);
     if(profil!=="fail"){
         res.json({"role":req.body.role, "id":profil});
     }else{
@@ -39,7 +38,7 @@ app.get('/api/login', function(req,res){
 });
 
 app.get('/api/listeprofils', function(req,res){
-    var isCorrect = Profil.getlistProfil(req.body.role);
+    var isCorrect = Profil.getlistProfil("non_miagiste");
     if(isCorrect.length!==0){
         res.json(isCorrect);
     }else{
