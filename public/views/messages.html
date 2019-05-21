@@ -18,6 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <body>
     <!-- /////////////////////////  Bloc barre de menu ///////////////////////// -->
@@ -58,59 +59,102 @@
     <!-- ///////////////////////// Bloc historiques des questions ///////////////////////// -->
     <div class="espace">
         <h3> Vos précédentes questions </h3>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Question </h5>
-                    <small> le 04/05/2019 à 12:00 par : </small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col"> Messages </th>
+                <th scope="col"> </th>
+                <th scope="col">Supprimer</th>
+                <th scope="col">Modifier</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- MESSAGE 1 -->
+            <tr>
+                <td>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"> Question </h5>
+                            <small> le 04/05/2019 à 12:00 par :  </small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
 
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Réponse </h5>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            </a>
+                </td>
+                <td>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Question </h5>
-                    <small> le 04/05/2019 à 12:00 par :  </small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
 
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Réponse </h5>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            </a>
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"> Réponse </h5>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+                </td>
+                <td> <button class="btn btn-color">  <i class="fas fa-trash-alt"></i> </button></td>
+                <td> <button class="btn btn-color">   <i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
 
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Question </h5>
-                    <small> le 04/05/2019 à 12:00 par : </small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            <!-- MESSAGE 2 -->
+            <tr>
+                <!-- bloc question -->
+                <td>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"> Question </h5>
+                            <small> le 04/05/2019 à 12:00 par : .... </small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
 
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Réponse </h5>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-            </a>
+                </td>
+                <!-- bloc réponse -->
+                <td>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 
-            <!-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"> -->
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Question </h5>
-                    <small> le 04/05/2019 à 12:00 par : </small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit ?</p>
 
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1"> Réponse </h5>
-                </div>
-                <button class="btn btn-color"> Repondre </button>
-            </a>
-        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"> Réponse </h5>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+                </td>
+                <!-- btn modifier et supprimer -->
+                <td> <button class="btn btn-color">  <i class="fas fa-trash-alt"></i> </button></td>
+                <td> <button class="btn btn-color">   <i class="fas fa-pencil-alt"></i></button></td>
+            </tr>
+
+            <!-- MESSAGE 3 -->
+            <tr>
+                <!-- bloc question -->
+                <td>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"> Question </h5>
+                            <small> le 04/05/2019 à 12:00 par :  </small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    </a>
+
+                </td>
+                <!-- bloc réponse -->
+                <td>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+
+
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"> Réponse </h5>
+                        </div>
+                        <p> </p>
+                        <button class="btn btn-color"> Repondre </button>
+                    </a>
+                </td>
+                <!-- btn modifier et supprimer -->
+                <td> <button class="btn btn-color">  <i class="fas fa-trash-alt"></i> </button></td>
+                <td> <button class="btn btn-color">  <i class="fas fa-pencil-alt"></i> </button></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
