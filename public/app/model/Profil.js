@@ -54,13 +54,23 @@ var getlistProfil = function(role){
     }
     return liste;
 };
-
+/**
+* Méthode permettant de valider un profil ENTREPRISE par un profil COLLABORATEUR
+ */
+var validateProfil = function (role) {
+    var GoodProfil = true;
+    /**
+     * If role == entreprise
+     * EFFACER CEST FAUX**/
+}
 
 var updateProfil = function(){
-
+//RECHERCHER ROFIL
+    //profils[i].role="Entreprise";
 };
 
 //export fonctions
 exports.createProfil = createProfil;
 exports.updateProfil = updateProfil;
 exports.getlistProfil = getlistProfil;
+exports.validateProfil= validateProfil;
