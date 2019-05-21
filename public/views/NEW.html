@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="miageApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+
+    <script src="./main.js"></script>
+    <script src="../myApp.js"></script>
+
+ </head>
+<body>
+
+<!-- /////////////////////////  Bloc barre de menu ///////////////////////// -->
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="views/home.html"> LOGO </a>
+        <div class="collapse navbar-collapse " id="navbar">
+            <ul class="navbar-nav text-right">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/">Présentation<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/formation">Formation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/alternance">Alternance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/contact">Contact</a>
+                </li>
+                <li class="nav-item" ng-controller='menuController'>
+                    <a class="nav-link" ng-if='!connected()' ng-click="clickToSignIn()" href="">Inscription</a>
+                </li>
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='!connected()' ng-click="login()" href="">Mon espace</a>
+                </li>
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='connected()' ng-click="deconnexion()" href="">Deconnexion</a>
+                </li>
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='private()' href="#/listeprofil">Liste des profils</a>
+                </li>
+
+
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='private()' href="messages.html">messages</a>
+                </li>
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='private()' href="reponseMessage.html">Reponse messages</a>
+                </li>
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='private()' href="erreur.html">erreur</a>
+                </li>
+                <li class="nav-item" ng-controller="menuController">
+                    <a class="nav-link" ng-if='private()' href="listeMessages.html">Liste des messages</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<button class="btn"> test </button>
+
+<button type="button" class="btn btn-primary">Primary</button>
+
+</body>
+</html>
