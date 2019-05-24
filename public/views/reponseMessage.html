@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/css/ngDialog.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/css/ngDialog.css">
-    <script src="./main.js"></script>
+    <script src="/main.js"></script>
     <script src="../myApp.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"></script>
@@ -54,45 +54,30 @@
             </div>
         </nav>
     </div>
+    <!-- /////////////////////////////////////////////////////////////////////// -->
+    <form class="espace shadow rond text-center p-3 mb-5">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"> Question de bidule </h5>
+            <p> le 04/05/2019 à 12:00 </p>
+        </div>
+        <!-- /////////////////////////  Question ///////////////////////// -->
+        <div class="row">
+            <div class="col-md-12">
+                <p class="quest">" Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit ? "</p>
+            </div>
+        </div>
+        <!-- /////////////////////////  Saisie ///////////////////////// -->
+        <div class="row">
+            <div class="col-md-12">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        </div>
 
-    <!-- /////////////////////////  Répondre à une question ///////////////////////// -->
-    <div class="espace">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col"> Messages </th>
-                <th scope="col"> </th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"> Question </h5>
-                                <small> le 04/05/2019 à 12:00 par :  </small>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        </a>
-
-                    </td>
-                    <td>
-                        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-
-
-                            <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"> Réponse </h5>
-                            </div>
-                            <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        </a>
-                    </td>
-
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-
+        <div class="text-center p-3 mb-2">
+            <a class="btn btn-color" href="#"> Répondre </a>
+            <a class="btn btn-color" href="#"> Annuler </a>
+        </div>
+    </form>
 
 
 </body>

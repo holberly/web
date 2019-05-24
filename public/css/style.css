@@ -98,6 +98,17 @@ h3{
 
 
 
+.response{
+    border-color: #4ea283 ;
+}
+
+.quest{
+    font-weight: bold;
+}
+
+
+/* EN COURS DE TEST */
+
 #truc div
 {
     width: 200px;
@@ -134,5 +145,5 @@ h3{
     transform: translateX(200px); /* On déplace l'objet */
 }
 
-
+/* FIN EN COURS DE TEST */
 
