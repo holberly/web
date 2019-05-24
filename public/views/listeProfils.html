@@ -79,14 +79,13 @@ s-->
             <thead>
                 <tr>
                     <th scope="col"> N° </th>
-                    <th scope="col"> Type </th>
+                    <th scope="col"> Profil </th>
                     <th scope="col"> Nom </th>
                     <th scope="col"> Prénom </th>
                     <th scope="col"> adresse </th>
                     <th scope="col"> mail </th>
                     <th scope="col"> telephone </th>
-                    <th scope="col">Supprimer</th>
-                    <th scope="col">Modifier</th>
+                    <th scope="col">Miagiste</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,8 +97,13 @@ s-->
                     <td>{{item.adresse}}</td>
                     <td>{{item.mail}}</td>
                     <td>{{item.telephone}}</td>
-                    <td> <button class="btn btn-color" ng-click="supprimer()">  <i class="fas fa-trash-alt"></i> </button></td>
-                    <td> <button class="btn btn-color" ng-click="modifier()">   <i class="fas fa-pencil-alt"></i></button></td>
+                    <td>
+                        <!-- Default switch -->
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="SwitcheMiage">
+                            <label class="custom-control-label" for="SwitcheMiage"></label>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
