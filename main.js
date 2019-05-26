@@ -22,8 +22,12 @@ function isEmptyObject(obj) {
 app.post('/api/inscription', function(req, res)
 {
     var profil = Profil.createProfil(req.body.role, req.body.nom, req.body.prenom, req.body.adresse, req.body.mail,req.body.tel);
-    if(profil!=="fail"){
-        res.json({"role":req.body.role, "id":profil});
+    if(profil!=="fail") {
+        if (req.body.role == "entreprise") {
+            res.json({"role": "non_miagiste", "id": profil});
+         }else {
+            res.json({"role": req.body.role, "id": profil});
+        }
     }else{
         res.status(409).json({error: "Ce Profil n'existe pas. Veuillez vous inscrire."});
     }
@@ -31,7 +35,6 @@ app.post('/api/inscription', function(req, res)
 
 app.get('/api/login/:mail', function(req,res){
     var isCorrect = Profil.findEmail(req.params.mail);
-    console.log("b"+isCorrect);
     if(isCorrect!="nothing"){
         res.json(isCorrect);
     }else{
@@ -57,9 +60,17 @@ app.put('/api/changerRole', function(req,res){
     }
 });
 
+app.put('/api/profil/changerRoleEntreprise', function(req,res){
+    var isCorrect = Profil.validateProfilEntreprise(req.body.id);
+    if(isCorrect==0){
+        res.json(isCorrect);
+    }else{
+        res.status(409).json({error: "Le rôle du profil n'a pas pu être changé."});
+    }
+});
+
 app.post('/api/offre/submit', function(req,res){
     var isCorrect = Offre.createOffre(req.body.type, req.body.societe, req.body.sujet, req.body.adresse, req.body.mail, req.body.tel);
-    console.log(req.body.type+req.body.societe+req.body.sujet+req.body.adresse+req.body.mail+req.body.tel);
     if(isCorrect==0){
         res.json(isCorrect);
     }else{
@@ -97,8 +108,6 @@ app.post("/api/message/create", function(req,res){
 
 app.put("/api/message/answer", function(req,res){
     var isCorrect = Message.answerMessage(req.body.id, req.body.reponse);
-    console.log("a"+req.body.id+"b"+req.body.reponse);
-    console.log("c"+isCorrect);
     if(isCorrect==0){
         res.json(isCorrect);
     }else{
@@ -119,7 +128,6 @@ app.get('/api/message/:id', function(req,res){
 app.get('/api/question/', function(req, res){
     var isCorrect = Message.getMessageWithoutAnswer();
     if(isCorrect.length!==0){
-        console.log(isCorrect[0].contenu);
         res.json(isCorrect);
     }else{
         res.status(409).json({error: "On va tester car ça me soule"});

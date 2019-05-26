@@ -50,9 +50,9 @@ var createProfil = function(role,nom,prenom,adresse,mail,telephone){
             entreprise = true;
         }
         profils.push(new Profil(id, role, nom, prenom, adresse, mail, telephone, entreprise));
+        console.log(profils[0].role);
         return id;
     }else{
-
         return 1;
     }
 };
@@ -81,7 +81,7 @@ var getlistProfil = function(){
 var validateProfilEntreprise = function (id) {
     for(var i=0;i<profils.length;i++){
         if(profils[i].id==id){
-            profils[i].entreprise = true;
+            profils[i].role = "entreprise";
             return 0;
         }
     }

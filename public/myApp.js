@@ -102,6 +102,9 @@ miageApp.controller('signinController', function ($scope, $http, $cookieStore, n
                 $cookieStore.put("connected", "true");
                 $cookieStore.put("id", response.data.id);
                 $cookieStore.put("role", response.data.role);
+                console.log(response.data);
+                console.log(response.data.role);
+                console.log($cookieStore.get("role"));
                 ngDialog.closeAll();
             }).catch(function onError(response) {
                 ngDialog.closeAll();
@@ -111,11 +114,18 @@ miageApp.controller('signinController', function ($scope, $http, $cookieStore, n
             });
         }
     };
+    $scope.clickToLogIn = function(){
+        console.log("test");
+        ngDialog.closeAll();
+        //ouvre la pop-up
+        ngDialog.open({
+            template : '../views/connexion.html'
+        });
+    };
 });
 
 miageApp.controller('loginController', function ($scope, $cookieStore, ngDialog, $http) {
     $scope.login = function(user) {
-        console.log(user.mail);
         var config = {
             params: user.mail,
             headers : {'Accept' : 'application/json'}
@@ -126,6 +136,8 @@ miageApp.controller('loginController', function ($scope, $cookieStore, ngDialog,
             $cookieStore.put("connected", "true");
             $cookieStore.put("id", response.data.id);
             $cookieStore.put("role", response.data.role);
+            console.log(response.data.role);
+            console.log($cookieStore.get("role"));
             ngDialog.closeAll();
         }).catch(function onError(response){
             console.log("pas ok");
@@ -135,11 +147,9 @@ miageApp.controller('loginController', function ($scope, $cookieStore, ngDialog,
             });
         });
     };
-
     //fonction pour ouvrir la pop-up d'inscription
     $scope.clickToSignIn = function(){
         ngDialog.closeAll();
-        //stock un cookie pour détecter que l'utilisateur est connecté
         //ouvre la pop-up
         ngDialog.open({
             template : '../views/inscription.html'
@@ -183,6 +193,18 @@ miageApp.controller('listeProfilsController', function($scope, $http, $route){
     });
     $scope.changerRole=function(id){
         $http.put('/api/changerRole', {"id":id}).then(function onSuccess(response) {
+            $route.reload();
+        }).catch(function onError(response) {
+            console.log("erreur"+response);
+            ngDialog.open({
+                template: '../views/erreur.html'
+            });
+        });
+    };
+    $scope.changerRoleEntreprise=function(id){
+
+        $http.put('/api/profil/changerRoleEntreprise', {"id":id}).then(function onSuccess(response) {
+            console.log("test");
             $route.reload();
         }).catch(function onError(response) {
             console.log("erreur"+response);
