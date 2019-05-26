@@ -1,7 +1,7 @@
-<!--
+
 
 <!DOCTYPE html>
-<html lang="fr" class="popup">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,25 +9,26 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
     <body>
-
- -->
-
-        <div class="row popup text-center shadow p-3 mb-5 rond " ng-controller="loginController">
-            <div class="col-md-8">
+        <div class="row popup text-center shadow p-3 rond " ng-controller="loginController">
+            <div class="col-md-8 titeCo">
                 <h3 class="">Connexion</h3>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Veuillez saisir votre adresse e-mail" aria-label="Mail" aria-describedby="Mail" ng-model="user.mail">
-                    <div class="input-group-append">
-                        <input class="btn btn-color" type="submit" value="Connexion" ng-click="login(user)">
-                    </div>
+                <div class="input-group mb-3 conex sconexbord">
+
+                        <input type="text" class="form-control" placeholder="Veuillez saisir votre adresse e-mail" aria-label="Mail" aria-describedby="Mail" ng-model="user.mail">
+                        <div class="input-group-append">
+                            <input class="btn btn-color-inv conexbord" type="submit" value="Connexion" ng-click="login(user)">
+                        </div>
+
                 </div>
             </div>
-            <div class="col-md-4 colore">
+            <div class="col-md-4 colore titeCo-inv rond">
                 <h3> Pas inscrit ? </h3>
-                <button class="btn btn-color" ng-click="clickToSignIn()" role="button"> S'inscrire </button>
+                <div class="conexbtn">
+                    <button class="btn btn-color" ng-click="clickToSignIn()" role="button"> S'inscrire </button>
+                </div>
             </div>
         </div>
-    <!--
+
     </body>
 </html>
--->
+

@@ -41,20 +41,47 @@ h3{
     color: white;
 }
 
-.btn-color{
+.btn-color2{
     margin-top: 2%;
     color: #b18b2c !important;
     border-color: #b18b2c !important;
     background-color: white !important;
 }
 
-.btn-color:active,.btn-color:hover{
+.btn-color2:active,.btn-color2:hover{
     color: white !important;
     border-color: white !important;
     background-color: #b18b2c !important;
 }
 
+.btn-color-inv2{
+    margin-top: 2%;
+    color: white !important;
+    border-color: white !important;
+    background-color: #b18b2c !important;
+}
+
+.btn-color-inv2:active,.btn-color-inv2:hover{
+    color: #b18b2c !important;
+    border-color: #b18b2c !important;
+    background-color: white !important;
+}
+
+.btn-color{
+    margin-top: 2%;
+    color: #4ea283 !important;
+    border-color: #4ea283 !important;
+    background-color: white !important;
+}
+
+.btn-color:active,.btn-color:hover{
+    color: white !important;
+    border-color: white !important;
+    background-color: #4ea283 !important;
+}
+
 .btn-color-inv{
+    margin-top: 2%;
     color: white !important;
     border-color: white !important;
     background-color: #4ea283 !important;
@@ -65,7 +92,6 @@ h3{
     border-color: #4ea283 !important;
     background-color: white !important;
 }
-
 
 .rond{
     border-radius: 15px;
@@ -139,4 +165,27 @@ h3{
 
 .formt{
     background-color: #f0ffff91;
+}
+
+
+.titeCo h4, h3{
+    color:#4ea283;
+    text-transform: uppercase;
+}
+
+.titeCo-inv h3, h4{
+    color: white;
+    text-transform: uppercase;
+}
+
+.conex{
+    padding-top: 15%;
+}
+
+.conexbtn{
+    padding-top: 30%;
+}
+
+.conexbord{
+    border: #4ea283 !important;
 }
