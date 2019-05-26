@@ -97,7 +97,7 @@ h3{
     border-radius: 15px;
 }
 .popup{
-    background-color: #f8f8f8;
+    background-color: #f8f8f8 !important;
     margin-left: 5px;
     margin-top:5px;
     width: 750px;
@@ -189,3 +189,35 @@ h3{
 .conexbord{
     border: #4ea283 !important;
 }
+
+.ngdialog-overlay{
+    background: none !important;
+   /* top : inherit !important; */
+}
+/*
+.ngdialog{
+    left: inherit !important;
+    right: inherit !important;
+    top: inherit !important;
+    bottom: inherit !important;
+}
+*/
+
+.ngdialog{
+    padding-top: 10% !important;
+    padding-left: 1% !important;
+    background-color: #28a7456b !important;
+}
+
+div>.ngdialog-content{
+    background-color: transparent !important;
+}
+/*
+div>.ngdialog-close{
+    display: none;
+}
+
+div>.ngdialog-content button{
+    display: none;
+}
+*/
