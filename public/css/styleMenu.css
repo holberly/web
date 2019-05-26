@@ -1,0 +1,112 @@
+/* micro reset */
+* {
+    box-sizing: border-box ;
+}
+html, body, ul {
+    padding: 0 ; margin: 0 ;
+}
+
+/* Quelques styles de base */
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 1.75;
+    color: #F1EEDD;
+    background: linear-gradient(to right, #b18b2c, #4ea283);
+
+    /*
+    background: linear-gradient(to right, #B13C2E, #4ea283);
+    background: linear-gradient(to right, #4065b1, #4ea283);*/
+
+
+}
+.main-header-menu {
+    color: #b18b2c;
+    background: #FFF;
+}
+
+body header img{
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #b18b2c);
+    filter: opacity(.5) drop-shadow(0 0 0 #b18b2c);
+
+}
+
+/* Les éléments sont placés l'un à côté de l'autre */
+.header-inner-menu {
+    display: table; ;
+    width: 100% ;
+    max-width: 1100px ;
+    margin: 0 auto ; /* on centre l'élément */
+    padding: 20px 25px ; /* on ventile un peu */
+}
+.header-inner-menu > * {
+    display: table-cell ;
+    vertical-align: middle ;
+}
+
+/* Alignement du menu */
+.header-nav-menu {
+    text-align: right ;
+}
+/*
+   Faire passer le menu en inline (inline-block, inline-table ou inline-flex)
+   pour le rendre sensible à l'alignement à droite. Ses items aussi sont en inline.
+*/
+.header-nav-menu ul,
+.header-nav-menu li {
+    display: inline !important;
+    list-style: none !important; ;
+}
+
+.header-nav-menu a {
+    position: relative !important;
+    display: inline-block !important;
+    padding: 8px 15px !important;
+    vertical-align: middle !important;
+    font-weight: bold !important;
+    letter-spacing: 0.025em !important;
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* Animation du lien */
+.header-nav-menu a:after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 ; right: 20px ; left: 20px ;
+    height: 2px !important; ;
+    background-color: #b18b2c  !important;
+
+    /* Préparation de notre animation */
+    opacity: 0 !important;
+    transform: translateY(5px) !important;
+    transition: all .4s !important;
+}
+/* Le trait va remonter et apparaitre */
+.header-nav-menu a:hover:after,
+.header-nav-menu a:focus:after {
+    opacity: .6 !important;
+    transform: translateY(0) !important;
+}
+/* Je vire outline car juste au-dessus je définis un style :focus */
+.header-nav-menu a:focus {
+    outline: none ;
+}
+
+.nav-is-stuck .main-header-menu {
+    position: fixed ;
+    top: 0 ;
+    left: 0 ;
+    right: 0 ;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15) ;
+    animation: stickAnim .3s ;
+}
+
+@keyframes stickAnim {
+    0% {
+        transform: translateY(-86px) ;
+    }
+    100% {
+        transform: translateY(0) ;
+    }
+}
+

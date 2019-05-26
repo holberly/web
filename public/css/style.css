@@ -1,6 +1,17 @@
 .espace{
     margin-left: 10%;
     margin-right: 10%;
+
+}
+
+.espace2{
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.texteraF{
+    border-color: #b18b2c !important;
 }
 
 .deco{
@@ -14,11 +25,15 @@
 
 h5{
     text-transform: uppercase;
-    color : #4ea283;
+    color : #b18b2c;
+    font-style: italic;
 }
 
 h3{
     text-transform: uppercase;
+    color: #b18b2c;
+    font-weight: bold;
+
 }
 
 .colore{
@@ -27,15 +42,16 @@ h3{
 }
 
 .btn-color{
-    color: #4ea283 !important;
-    border-color: #4ea283 !important;
+    margin-top: 2%;
+    color: #b18b2c !important;
+    border-color: #b18b2c !important;
     background-color: white !important;
 }
 
 .btn-color:active,.btn-color:hover{
     color: white !important;
     border-color: white !important;
-    background-color: #4ea283 !important;
+    background-color: #b18b2c !important;
 }
 
 .btn-color-inv{
@@ -96,54 +112,31 @@ h3{
     transform: translate(-50%, -50%);
 }
 
-
-
 .response{
-    border-color: #4ea283 ;
+    border-color: #b18b2c;
 }
 
 .quest{
     font-weight: bold;
 }
 
-
-/* EN COURS DE TEST */
-
-#truc div
-{
-    width: 200px;
-    height: 150px;
-    background-color: blue;
-    transition-property: transform;
-    transition-duration: 1s;
-    transition-timing-function: ease; /* Transition de type ease */
-    background-color: rebeccapurple;
+.titelQues h4, h3{
+    color:#b18b2c;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 
-#truc div:hover
-{
-    transform: translateX(200px); /* On déplace l'objet */
-    background-color: aqua;
+.table thead th{
+    color: white;
+    text-transform: initial;
 }
 
-#tr div
-{
-    width: 200px;
-    height: 150px;
-    background-color: blue;
-    transition-property: transform;
-    transition-duration: 1s;
-    transition-timing-function: ease; /* Transition de type ease */
-    background-color: aqua;
+#formQuest{
+    margin-top: 2%;
+    background-color: #f0ffff91;
 }
 
-
-#tr div:hover
-{
-    background-color: rebeccapurple;
-    transform: translateX(200px); /* On déplace l'objet */
+.formt{
+    background-color: #f0ffff91;
 }
-
-/* FIN EN COURS DE TEST */
-
