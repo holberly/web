@@ -1,6 +1,17 @@
 var profils = [];
 
-function Profil(id, role, nom, prenom, adresse, mail, telephone){
+/**
+ * Constructeur de Profil
+ * @param id du profil
+ * @param role du profil (non_miagiste, miagiste, collaborateur, entreprise)
+ * @param nom du profil
+ * @param prenom du profil
+ * @param adresse du profil
+ * @param mail du profil
+ * @param telephone du profil
+ * @constructor
+ */
+function Profil(id, role, nom, prenom, adresse, mail, telephone, entreprise){
     this.id = id;
     this.role = role;
     this.nom = nom;
@@ -8,6 +19,7 @@ function Profil(id, role, nom, prenom, adresse, mail, telephone){
     this.adresse = adresse;
     this.mail = mail;
     this.tel = telephone;
+    this.entreprise = entreprise;
 }
 
 /**
@@ -32,11 +44,16 @@ var createProfil = function(role,nom,prenom,adresse,mail,telephone){
         if(profils.length!==undefined){
             id=profils.length+1;
         }
-        profils.push(new Profil(id, role, nom, prenom, adresse, mail, telephone));
+        entreprise = false;
+        if(role=="entreprise"){
+            role = "non_miagiste";
+            entreprise = true;
+        }
+        profils.push(new Profil(id, role, nom, prenom, adresse, mail, telephone, entreprise));
         return id;
     }else{
 
-        return "fail";
+        return 1;
     }
 };
 
@@ -45,32 +62,73 @@ var createProfil = function(role,nom,prenom,adresse,mail,telephone){
  * @param role
  * @returns {Array} liste des profils ayant le rôle demandé
  */
-var getlistProfil = function(role){
+var getlistProfil = function(){
     var liste = [];
     for(var i=0;i<profils.length;i++){
-        if(profils[i].role===role){
+        if(profils[i].role==="non_miagiste" && profils[i].entreprise==false){
             liste.push(profils[i]);
         }
     }
     return liste;
 };
-/**
-* Méthode permettant de valider un profil ENTREPRISE par un profil COLLABORATEUR
- */
-var validateProfil = function (role) {
-    var GoodProfil = true;
-    /**
-     * If role == entreprise
-     * EFFACER CEST FAUX**/
-}
 
-var updateProfil = function(){
-//RECHERCHER ROFIL
-    //profils[i].role="Entreprise";
+
+/**
+ * Méthode permettant de passer un compte non_miagiste à un compte entreprise
+ * @param id du profil à mettre à jour
+ * @returns {number} 0 si le profil a été mis à jour, 1 si aucun profil n'a été mis à jour
+ */
+var validateProfilEntreprise = function (id) {
+    for(var i=0;i<profils.length;i++){
+        if(profils[i].id==id){
+            profils[i].entreprise = true;
+            return 0;
+        }
+    }
+    return 1;
 };
+
+/**
+ * Méthode permettant de passer un compte non_miagiste à un compte miagiste
+ * @param id du profil à mettre à jour
+ * @returns {number} 0 si le profil a été mis à jour, 1 si aucun profil n'a été mis à jour
+ */
+
+var validateProfilMiagiste = function (id) {
+    for(var i=0;i<profils.length;i++){
+        if(profils[i].id==id){
+            profils[i].role = 'miagiste';
+            return 0;
+        }
+    }
+    return 1;
+};
+
+
+var findEmail = function(email){
+    for(var i=0;i<profils.length;i++){
+        if(profils[i].mail==email){
+            return profils[i];
+        }
+    }
+    return "nothing";
+};
+
+var getProfilEntreprise = function(){
+    var liste = [];
+    for(var i=0;i<profils.length;i++){
+        if(profils[i].entreprise==true && profils[i].role!="entreprise"){
+            liste.push(profils[i]);
+        }
+    }
+    return liste;
+};
+
 
 //export fonctions
 exports.createProfil = createProfil;
-exports.updateProfil = updateProfil;
 exports.getlistProfil = getlistProfil;
-exports.validateProfil= validateProfil;
+exports.validateProfilEntreprise= validateProfilEntreprise;
+exports.validateProfilMiagiste = validateProfilMiagiste;
+exports.findEmail = findEmail;
+exports.getProfilEntreprise = getProfilEntreprise;

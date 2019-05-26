@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="fr" ng-app="miageApp">
 <head>
     <meta charset="UTF-8">
@@ -20,10 +20,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
-<body>
+<body>-->
 
 <!-- /////////////////////////  Bloc barre de menu ///////////////////////// -->
-<div>
+<!--<div>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="views/home.html"> LOGO </a>
         <div class="collapse navbar-collapse " id="navbar">
@@ -55,7 +55,7 @@
             </ul>
         </div>
     </nav>
-</div>
+</div>-->
 
 <!-- ///////////////////////// Bloc tableau profils ///////////////////////// -->
 
@@ -75,6 +75,10 @@
 s-->
 
     <div class="espace">
+
+        <h3> Les profils non-miagiste</h3>
+
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -96,15 +100,48 @@ s-->
                     <td>{{item.prenom}}</td>
                     <td>{{item.adresse}}</td>
                     <td>{{item.mail}}</td>
-                    <td>{{item.telephone}}</td>
+                    <td>{{item.tel}}</td>
                     <td>
                         <!-- Switch oui non Miagiste -->
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input" id="SwitcheMiage">
-                            <label class="custom-control-label" for="SwitcheMiage"></label>
+                            <button ng-click="changerRole(item.id)">Ok</button>
                         </div>
                     </td>
                 </tr>
+            </tbody>
+        </table>
+
+        <h3> Profils entreprise à valider </h3>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col"> N° </th>
+                <th scope="col"> Profil </th>
+                <th scope="col"> Nom </th>
+                <th scope="col"> Prénom </th>
+                <th scope="col"> adresse </th>
+                <th scope="col"> mail </th>
+                <th scope="col"> telephone </th>
+                <th scope="col">Miagiste</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in profilEntreprise">
+                <td>{{item.id}}</td>
+                <td>{{item.role}}</td>
+                <td>{{item.nom}}</td>
+                <td>{{item.prenom}}</td>
+                <td>{{item.adresse}}</td>
+                <td>{{item.mail}}</td>
+                <td>{{item.tel}}</td>
+                <td>
+                    <!-- Switch oui non Entreprise -->
+                    <div class="custom-control custom-switch">
+                        <button ng-click="changerRoleEntreprise(item.id)">Ok</button>
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

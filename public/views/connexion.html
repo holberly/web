@@ -12,19 +12,19 @@
 
  -->
 
-        <div class="row popup text-center shadow p-3 mb-5 rond ">
+        <div class="row popup text-center shadow p-3 mb-5 rond " ng-controller="loginController">
             <div class="col-md-8">
-                <h3 class=""> Connexion</h3>
+                <h3 class="">Connexion</h3>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Veuillez saisir votre adresse e-mail" aria-label="Mail" aria-describedby="Mail" ng-model="user.mail">
                     <div class="input-group-append">
-                        <input class="btn btn-color" type="submit" value="Connexion" ng-controller="loginController" ng-click="login();">
+                        <input class="btn btn-color" type="submit" value="Connexion" ng-click="login(user)">
                     </div>
                 </div>
             </div>
             <div class="col-md-4 colore">
                 <h3> Pas inscrit ? </h3>
-                <a class="btn btn-color" href="inscription.html" role="button"> S'inscrire </a>
+                <button class="btn btn-color" ng-click="clickToSignIn()" role="button"> S'inscrire </button>
             </div>
         </div>
     <!--

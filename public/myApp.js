@@ -48,6 +48,26 @@ miageApp.config(function($routeProvider) {
             controller : 'signinController'
         })
 
+        .when('/offres',{
+            templateUrl: '/views/offres.html',
+            controller : 'offresController'
+        })
+
+        .when('/ajouterOffre',{
+            templateUrl: '/views/ajoutOffre.html',
+            controller : 'ajouterOffreController'
+        })
+
+        .when('/messages',{
+            templateUrl: '/views/listeMessages.html',
+            controller : 'messagesController'
+        })
+
+        .when('/mesQuestions',{
+            templateUrl: '/views/listeQuestions.html',
+            controller : 'questionsController'
+        })
+
         .when('/listeprofil',{
             templateUrl: '/views/listeProfils.html',
             controller : 'listeProfilsController'
@@ -72,31 +92,57 @@ miageApp.controller('contactController', function($scope) {
 
 miageApp.controller('signinController', function ($scope, $http, $cookieStore, ngDialog) {
     $scope.signIn = function(user) {
-        $http.post('/api/inscription', user).then(function onSuccess(response) {
+        if (typeof user.role === undefined || typeof user.nom === undefined || typeof user.prenom === undefined ||
+            typeof user.adresse === undefined || typeof user.mail === undefined || typeof user.tel === undefined) {
+            ngDialog.open({
+                template: '../views/erreur.html'
+            });
+        } else {
+            $http.post('/api/inscription', user).then(function onSuccess(response) {
+                $cookieStore.put("connected", "true");
+                $cookieStore.put("id", response.data.id);
+                $cookieStore.put("role", response.data.role);
+                ngDialog.closeAll();
+            }).catch(function onError(response) {
+                ngDialog.closeAll();
+                ngDialog.open({
+                    template: '../views/erreur.html'
+                });
+            });
+        }
+    };
+});
+
+miageApp.controller('loginController', function ($scope, $cookieStore, ngDialog, $http) {
+    $scope.login = function(user) {
+        console.log(user.mail);
+        var config = {
+            params: user.mail,
+            headers : {'Accept' : 'application/json'}
+        };
+        //gheto
+        $http.get('/api/login/'+user.mail).then(function onSuccess(response) {
+            console.log("ok"+response.data.role);
             $cookieStore.put("connected", "true");
             $cookieStore.put("id", response.data.id);
             $cookieStore.put("role", response.data.role);
-        }).catch(function onError(response) {
+            ngDialog.closeAll();
+        }).catch(function onError(response){
+            console.log("pas ok");
             ngDialog.closeAll();
             ngDialog.open({
                 template : '../views/error.html'
             });
         });
     };
-});
 
-miageApp.controller('loginController', function ($scope, $cookieStore, ngDialog) {
-    $scope.login = function(user) {
-        $http.get('/api/login', user).then(function onSuccess(response) {
-            $cookieStore.put("connected", "true");
-            $cookieStore.put("id", response.data.id);
-            $cookieStore.put("role", response.data.role);
-            ngDialog.closeAll();
-        }).catch(function onError(response){
-            ngDialog.closeAll();
-            ngDialog.open({
-                template : '../views/error.html'
-            });
+    //fonction pour ouvrir la pop-up d'inscription
+    $scope.clickToSignIn = function(){
+        ngDialog.closeAll();
+        //stock un cookie pour détecter que l'utilisateur est connecté
+        //ouvre la pop-up
+        ngDialog.open({
+            template : '../views/inscription.html'
         });
     };
 });
@@ -108,14 +154,13 @@ miageApp.controller('menuController', function($scope, $cookieStore, $location, 
     $scope.connected = function(){
         return $cookieStore.get("connected")==="true";
     };
-    //fonction pour ouvrir la pop-up d'inscription
-    $scope.clickToSignIn = function(){
-        //stock un cookie pour détecter que l'utilisateur est connecté
-        //ouvre la pop-up
-        ngDialog.open({
-            template : '../views/inscription.html'
-        });
+    $scope.miagiste = function(){
+        return $cookieStore.get("role")=="miagiste";
     };
+    $scope.pageOffre = function(){
+        return ($cookieStore.get("role")=='collaborateur' || $cookieStore.get("role")=='entreprise');
+    };
+
     $scope.deconnexion = function(){
         if($cookieStore.get("connected")==="true"){
             $cookieStore.remove("role");
@@ -132,9 +177,84 @@ miageApp.controller('menuController', function($scope, $cookieStore, $location, 
     };
 });
 
-miageApp.controller('listeProfilsController', function($scope, $http){
-    /// ATTENTION METTRE LIEN NODEJS
+miageApp.controller('listeProfilsController', function($scope, $http, $route){
     $http.get("/api/listeprofils").then(function(response) {
         $scope.profils = response.data;
     });
+    $scope.changerRole=function(id){
+        $http.put('/api/changerRole', {"id":id}).then(function onSuccess(response) {
+            $route.reload();
+        }).catch(function onError(response) {
+            console.log("erreur"+response);
+            ngDialog.open({
+                template: '../views/erreur.html'
+            });
+        });
+    };
+    $http.get("/api/profil/entreprise").then(function(response) {
+        $scope.profilEntreprise = response.data;
+    });
+});
+
+miageApp.controller('offresController', function($scope, $http) {
+    $http.get("/api/offre").then(function(response) {
+        $scope.offres = response.data;
+    });
+});
+
+miageApp.controller('messagesController', function($scope, $http, $route) {
+    console.log("ok");
+    $http.get('/api/question/').then(function(response) {
+        console.log(response.toString());
+        console.log(response.data.toString());
+        $scope.messagesARepondre = response.data;
+    });
+    $scope.submitAnswer = function(item, reponse){
+        console.log(item.id);
+        console.log(reponse);
+        $http.put('/api/message/answer', {"id": item.id, "reponse":reponse}).then(function onSuccess(response) {
+            console.log("ok");
+            $route.reload();
+        }).catch(function onError(response) {
+            console.log("pas ok");
+            ngDialog.open({
+                template: '../views/erreur.html'
+            });
+        });
+    }
+});
+
+
+miageApp.controller('questionsController', function($scope, $http, $cookieStore, $route, ngDialog) {
+    var ok = $cookieStore.get("id");
+    $http.get('/api/message/'+ok).then(function(response) {
+        $scope.messages = response.data;
+    });
+    $scope.submitQuestion = function(contenu){
+        var id_author = $cookieStore.get("id");
+        console.log(contenu);
+        $http.post('/api/message/create', {contenu : contenu, "auteur": id_author}).then(function onSuccess(response) {
+            console.log("ok");
+            $route.reload();
+        }).catch(function onError(response) {
+            console.log("pas ok");
+            ngDialog.open({
+                template: '../views/erreur.html'
+            });
+        });
+    };
+});
+
+miageApp.controller('ajouterOffreController', function($scope, $http, $route, ngDialog) {
+    $scope.submitOffer = function(offre){
+        $http.post('/api/offre/submit', offre).then(function onSuccess(response) {
+            console.log("ok");
+            $route.reload();
+        }).catch(function onError(response) {
+            console.log("pas ok");
+            ngDialog.open({
+                template: '../views/erreur.html'
+            });
+        });
+    };
 });

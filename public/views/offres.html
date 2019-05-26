@@ -1,117 +1,30 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">s
-    <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript" src="js/fonction.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
-</head>
-    <body>
-    <!-- /////////////////////////  Bloc barre de menu ///////////////////////// -->
-    <nav class="navbar  navbar-expand-md navbar-dark  bg-dark">
-        <a class="navbar-brand" href="home.html"> LOGO </a>
-        <div class="collapse navbar-collapse " id="navbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="home.html/#Presentation"> Présentation <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="home.html/#Formation"> Formation </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="home.html/#Alternance"> Alternances </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="contact.html"> Contact </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="javascript:PopupCentrer('inscription.html',800,350,'menubar=no,status=no')"> Inscription </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:PopupCentrer('connexion.html',800,350,'menubar=no,status=no')"> Mon espace </a>
-                    <!-- <a class="nav-link" href="javascript:ouvre_popup('html/connexion.html')">  Mon espace  </a> -->
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="offres.html"> Offres </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-        <div class="espace">
+ <div class="espace">
+            <br>
             <h3 class="text-center"> Les offres de stages et d'alternances </h3>
 
-            <!-- /////////////////////////  Bloc visible que pour les collaborateurs ///////////////////////// -->
-            <div>
-                <a class="btn btn-color" href="javascript:PopupCentrer('ajoutOffre.html',800,350,'menubar=no,status=no')"> Ajouter </a>
-                <a class="btn btn-color" href="javascript:PopupCentrer('modifierOffre.html',800,350,'menubar=no,status=no')"> Modifier </a>
-            </div>
-
             <!-- /////////////////////////  Bloc barre des offres de stages et alternances ///////////////////////// -->
-            <div class="row shadow p-3 mb-5 rond">
-                <div class="col-md-6">
-                    <a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">
+     <div class="col-md-12">
+     <table>
+           <tr ng-repeat="item in offres">
+               <td>
+                   <div class="row shadow p-3 mb-12 rond">
+                    <!--<a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">-->
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="badge badge-primary badge-pill"> Alternance </small>
+                            <h5 class="mb-1">{{item.nom_societe}}</h5>
+                            <small class="badge badge-primary badge-pill">{{item.type}}</small>
                         </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <p class="mb-1">{{item.sujet}}<br><br>
+                            <small class="badge badge-primary badge-pill">Mail :</small> {{item.tel_contact}} <br>
+                            <small class="badge badge-primary badge-pill">Téléphone :</small> {{item.mail_contact}} <br>
+                            <small class="badge badge-primary badge-pill">Adresse :</small> {{item.adresse}}</p><br>
 
-                        <small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
-                    </a>
-                    <a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="badge badge-primary badge-pill"> Stage </small>
 
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
-                    </a>
-                    <a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="badge badge-primary badge-pill"> Alternance </small>
 
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
-                    </a>
-                </div>
-
-                <div class="col-md-6">
-                    <a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="badge badge-primary badge-pill"> Stage </small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-
-                        <small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
-                    </a>
-                    <a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="badge badge-primary badge-pill"> Stage </small>
-
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
-                    </a>
-                    <a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="badge badge-primary badge-pill"> Alternance </small>
-
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                        <small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </body>
-</html>
+                       <!--<small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
+                   </a>-->
+                   </div>
+                 </td>
+           </tr>
+     </table>
+     </div>
+ </div>

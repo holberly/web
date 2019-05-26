@@ -22,15 +22,17 @@
 </head>
 <body class="popup">
         <div>
-            <h3> TITRE </h3>
+            <br>
+            <h3>AJOUTER UNE OFFRE</h3>
+            <br>
 
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group row">
-                    <label for="Type" class="col-md-3 col-form-label">Sujet : </label>
+                    <label for="Sujet" class="col-md-3 col-form-label">Sujet : </label>
                     <div class="col-md-9">
-                        <textarea class="form-control" class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Enter Sujet"rows="6"></textarea>
+                        <textarea class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Sujet"rows="6" ng-model="offre.sujet"></textarea>
                     </div>
                 </div>
             </div>
@@ -39,31 +41,34 @@
                     <div class="form-group row">
                         <label for="Type" class="col-md-3 col-form-label">Type : </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="Type" aria-describedby="Type" placeholder="Enter Type">
+                            <select class="custom-select" id="Type" ng-model="offre.type" required>
+                                <option value="stage">Stage</option>
+                                <option value="alternance">Alternance</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Societe" class="col-md-3 col-form-label">Societe :</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="Societe" aria-describedby="Societe" placeholder="Enter Societe">
+                            <input type="text" class="form-control" id="Societe" aria-describedby="Societe" placeholder="Societe" ng-model="offre.societe" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Adresse" class="col-md-3 col-form-label">Adresse : </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="Adresse" aria-describedby="Adresse" placeholder="Enter Adresse">
+                            <input type="text" class="form-control" id="Adresse" aria-describedby="Adresse" placeholder="Adresse" ng-model="offre.adresse" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Tel" class="col-md-3 col-form-label">Tel : </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="Tel" aria-describedby="Tel" placeholder="Enter Tel">
+                            <input type="text" class="form-control" id="Tel" aria-describedby="Tel" placeholder="Téléphone" ng-model="offre.tel" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Mail" class="col-md-3 col-form-label">Mail : </label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" id="Mail" aria-describedby="Mail" placeholder="Enter Mail">
+                            <input type="text" class="form-control" id="Mail" aria-describedby="Mail" placeholder="Mail" ng-model="offre.mail" required>
                         </div>
                     </div>
                 </form>
@@ -71,8 +76,7 @@
         </div>
 
         <div class="text-center p-3 mb-2">
-            <a class="btn btn-color" href="#"> Répondre </a>
-            <a class="btn btn-color" href="#"> Annuler </a>
+            <input class="btn btn-color" type="submit" ng-click="submitOffer(offre)" value="Envoyer">
         </div>
     </body>
 </html>
