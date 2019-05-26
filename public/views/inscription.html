@@ -1,21 +1,23 @@
-<div class="row  text-center shadow p-3 mb- rond" id="inscription">
-    <div class="col-md-5 colore">
+<div class="row popupins text-center shadow p-3 rond" id="inscription">
+    <div class="col-md-4 shadow colore titeCo-inv rond p-3">
         <h3> Déjà inscrit ? </h3>
-        <a class="btn btn-color" href="connexion.html" ng-clrole="button"> Se connecter </a>
+
+        <div class="conexbtn">
+            <a class="btn btn-color" href="connexion.html" ng-clrole="button"> Se connecter </a>
+        </div>
     </div>
-    <div class="col-md-7">
-        <div>
+    <div class="col-md-8 titeCo">
+        <div class="p-3">
             <h3> Inscription </h3>
         </div>
         <div>
             <!-- ///////////////////////// Bloc choix profil ///////////////////////// -->
-            <div class="input-group mb-3 row">
-                <div class="col-md-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="GroupProfil">Options</label>
+            <div class="input-group mb-3 col row">
+
+                    <div class="input-group-prepend span">
+                        <label class="input-group-text span3" for="GroupProfil">Options</label>
                     </div>
-                </div>
-                <div class="col-md-9">
+
                     <select class="custom-select" id="GroupProfil" ng-model="user.role" required>
                         <option selected>Votre profil...</option>
                         <option value="non_miagiste"> Non Miagiste </option>
@@ -24,62 +26,55 @@
                         <!-- Activité 4 : profil entreprise qui doit être validé par les collaborateurs -->
                         <option value="entreprise"> Entreprise </option>
                     </select>
-                </div>
+
             </div>
             <!-- ///////////////////////// Bloc saisie nom ///////////////////////// -->
-            <div class="input-group mb-3 row">
-                <div class="col-md-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="Nom"> Nom </span>
+            <div class="input-group mb-3 col row">
+                    <div class="input-group-prepend span">
+                        <span class="input-group-text span3" id="Nom"> Nom </span>
                     </div>
-                </div>
-                <div class="col-md-9">
                     <input type="text" class="form-control" placeholder="" aria-label="Nom" aria-describedby="Nom" ng-model="user.nom" required>
-                </div>
+
             </div>
             <!-- ///////////////////////// Bloc saisie prenom ///////////////////////// -->
-            <div class="input-group mb-3 row">
-                <div class="col-md-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="Prenom"> Prénom </span>
+            <div class="input-group mb-3 col row">
+
+                    <div class="input-group-prepend span">
+                        <span class="input-group-text span3" id="Prenom"> Prénom </span>
                     </div>
-                </div>
-                <div class="col-md-9">
+
                     <input type="text" class="form-control" placeholder="" aria-label="Prenom" aria-describedby="Prenom" ng-model="user.prenom" required>
-                </div>
+
             </div>
             <!-- ///////////////////////// Bloc saisie adresse ///////////////////////// -->
-            <div class="input-group mb-3 row">
-                <div class="col-md-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="Adresse"> Adresse </span>
+            <div class="input-group mb-3 col row">
+
+                    <div class="input-group-prepend span">
+                        <span class="input-group-text span3" id="Adresse"> Adresse </span>
                     </div>
-                </div>
-                <div class="col-md-9">
+
                     <input type="text" class="form-control" placeholder="" aria-label="Adresse" aria-describedby="Adresse" ng-model="user.adresse" required>
-                </div>
+
             </div>
             <!-- ///////////////////////// Bloc saisie mail ///////////////////////// -->
-            <div class="input-group mb-3 row">
-                <div class="col-md-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="Mail"> Adresse e-mail </span>
+            <div class="input-group mb-3 col row">
+
+                    <div class="input-group-prepend span">
+                        <span class="input-group-text span3" id="Mail"> E-mail </span>
                     </div>
-                </div>
-                <div class="col-md-9">
+
                     <input type="text" class="form-control" placeholder="" aria-label="Mail" aria-describedby="Mail" ng-model="user.mail" required>
-                </div>
+
             </div>
             <!-- ///////////////////////// Bloc saisie téléphone ///////////////////////// -->
-            <div class="input-group mb-3 row">
-                <div class="col-md-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="Tel"> Téléphone </span>
+            <div class="input-group mb-3 col row">
+
+                    <div class="input-group-prepend span">
+                        <span class="input-group-text span3" id="Tel"> Téléphone </span>
                     </div>
-                </div>
-                <div class="col-md-9">
+
                     <input type="text" class="form-control" placeholder=" " aria-label="Tel" aria-describedby="Tel" ng-model="user.tel" required>
-                </div>
+
             </div>
         </div>
         <input type="submit" class="btn btn-color-inv" ng-controller="signinController" ng-click="signIn(user)" value="S'inscrire">

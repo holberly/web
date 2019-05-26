@@ -1,6 +1,8 @@
 /* micro reset */
 * {
     box-sizing: border-box ;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
 }
 html, body, ul {
     padding: 0 ; margin: 0 ;
@@ -16,17 +18,15 @@ body {
     /*
     background: linear-gradient(to right, #B13C2E, #4ea283);
     background: linear-gradient(to right, #4065b1, #4ea283);*/
-
-
 }
 .main-header-menu {
-    color: #b18b2c;
+    color: #4ea283;
     background: #FFF;
 }
 
 body header img{
-    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #b18b2c);
-    filter: opacity(.5) drop-shadow(0 0 0 #b18b2c);
+    -webkit-filter: opacity(.5) drop-shadow(0 0 0 #4ea283);
+    filter: opacity(.5) drop-shadow(0 0 0 #4ea283);
 
 }
 
@@ -74,7 +74,7 @@ body header img{
     position: absolute !important;
     bottom: 0 ; right: 20px ; left: 20px ;
     height: 2px !important; ;
-    background-color: #b18b2c  !important;
+    background-color: #4ea283  !important;
 
     /* Préparation de notre animation */
     opacity: 0 !important;

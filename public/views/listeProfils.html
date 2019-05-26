@@ -74,26 +74,26 @@
 
 s-->
 
-    <div class="espace">
+    <div class="row espace3 row p-4 mb-2 rond formt shadow">
 
         <h3> Les profils non-miagiste</h3>
 
 
-        <table class="table table-striped">
+        <table class="table table-striped ">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th scope="col"> N° </th>
                     <th scope="col"> Profil </th>
                     <th scope="col"> Nom </th>
                     <th scope="col"> Prénom </th>
-                    <th scope="col"> adresse </th>
-                    <th scope="col"> mail </th>
-                    <th scope="col"> telephone </th>
+                    <th scope="col"> Adresse </th>
+                    <th scope="col"> E-mail </th>
+                    <th scope="col"> Téléphone </th>
                     <th scope="col">Miagiste</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in profils">
+                <tr class="text-center texti" ng-repeat="item in profils">
                     <td>{{item.id}}</td>
                     <td>{{item.role}}</td>
                     <td>{{item.nom}}</td>
@@ -103,7 +103,7 @@ s-->
                     <td>{{item.tel}}</td>
                     <td>
                         <!-- Switch oui non Miagiste -->
-                        <div class="custom-control custom-switch">
+                        <div class="custom-contol custom-switch">
                             <button ng-click="changerRole(item.id)">Ok</button>
                         </div>
                     </td>
@@ -115,19 +115,19 @@ s-->
 
         <table class="table table-striped">
             <thead>
-            <tr>
+            <tr class="text-center">
                 <th scope="col"> N° </th>
                 <th scope="col"> Profil </th>
                 <th scope="col"> Nom </th>
                 <th scope="col"> Prénom </th>
-                <th scope="col"> adresse </th>
-                <th scope="col"> mail </th>
-                <th scope="col"> telephone </th>
-                <th scope="col">Miagiste</th>
+                <th scope="col"> Adresse </th>
+                <th scope="col"> E-mail </th>
+                <th scope="col"> Téléphone </th>
+                <th scope="col"> Miagiste</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in profilEntreprise">
+            <tr class="text-center titleOf4" ng-repeat="item in profilEntreprise">
                 <td>{{item.id}}</td>
                 <td>{{item.role}}</td>
                 <td>{{item.nom}}</td>
@@ -137,8 +137,9 @@ s-->
                 <td>{{item.tel}}</td>
                 <td>
                     <!-- Switch oui non Entreprise -->
-                    <div class="custom-control custom-switch">
-                        <button ng-click="changerRoleEntreprise(item.id)">Ok</button>
+                    <div>
+                        <!--  <div class="custom-control custom-switch"> -->
+                        <button class="btn btn-color-inv" ng-click="changerRoleEntreprise(item.id)">Ok</button>
                     </div>
                 </td>
             </tr>

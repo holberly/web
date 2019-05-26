@@ -1,39 +1,39 @@
 <!-- ///////////////////////// Bloc historiques des questions ///////////////////////// -->
-<div class="espace">
-    <h3> Les questions </h3>
+<div class="row espace3 row p-4 mb-2 rond formt shadow">
+    <div class="titleOf2">
+        <h3> Les questions </h3>
+    </div>
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th scope="col"> Messages </th>
-            <th scope="col"> </th>
-            <th scope="col">Répondre</th>
-        </tr>
+
         </thead>
         <tbody>
-        <!-- MESSAGE 1 -->
+
         <tr ng-repeat="item in messagesARepondre">
             <td>
-                <div class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"> Question </h5>
-                        <small> le {{item.horadatage_msg}}</small>
+                <div class="list-group-item  flex-column align-items-start offre">
+                    <div class="d-flex w-100 justify-content-between rond">
+                        <h5 class="mb-1 titleOf3"> Question </h5>
+                        <small class="badge badge-primary badge-pill">le {{item.horadatage_msg}}</small>
                     </div>
-                    <p class="mb-1">{{item.contenu}}</p>
+                    <p class="mb-1 p-1 titleOf4">{{item.contenu}}</p>
                 </div>
 
             </td>
             <td>
-                <div class="list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"> Réponse </h5>
+                <div class="list-group-item  flex-column align-items-start offre">
+                    <div class="d-flex w-100 justify-content-between rond">
+                        <h5 class="mb-1 titleOf3"> Réponse </h5>
                     </div>
-                    <textarea class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Enter Sujet"rows="6" ng-model="reponse"></textarea>
+                    <textarea class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Entez votre réponse.."rows="2" ng-model="reponse"></textarea>
                 </div>
             </td>
             <!-- btn répondre -->
-            <td> <button class="btn btn-color" name="btnsupp" type="submit" ng-click="submitAnswer(item, reponse)">Répondre</button> </td>
+            <td> <button class="btn btn-color-inv" name="btnsupp" type="submit" ng-click="submitAnswer(item, reponse)">Répondre</button> </td>
         </tr>
 
         </tbody>
     </table>
+
+
 </div>

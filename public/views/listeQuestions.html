@@ -34,21 +34,21 @@
             <tbody>
                 <tr ng-repeat="item in messages">
                     <td>
-                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="list-group-item flex-column align-items-start offre">
                             <div class="d-flex w-100 justify-content-between rond">
-                                <h5 class="mb-1"> Question </h5>
-                                <small> le {{item.horadatage_msg}}</small>
+                                <h5 class="mb-1 titleOf3"> Question </h5>
+                                <small class="badge badge-primary badge-pill">le {{item.horadatage_msg}}</small>
                             </div>
-                            <p class="mb-1">{{item.contenu}}</p>
+                            <p class="mb-1  p-1 titleOf3">{{item.contenu}}</p>
                         </div>
 
                     </td>
                     <td>
-                        <div class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="list-group-item flex-column align-items-start offre">
                             <div class="d-flex w-100 justify-content-between rond">
-                                <h5 class="mb-1 "> Réponse </h5>
+                                <h5 class="mb-1 titleOf3"> Réponse </h5>
                             </div>
-                            <p class="mb-1">{{item.reponse}}</p>
+                            <p class="mb-1 p-1 titleOf4">{{item.reponse}}</p>
                         </div>
                     </td>
                 </tr>

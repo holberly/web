@@ -1,82 +1,121 @@
-<!DOCTYPE html>
-<html lang="fr" ng-app="miageApp">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/css/ngDialog.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/css/ngDialog.css">
-    <script src="./main.js"></script>
-    <script src="../myApp.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.6/angular-cookies.js"></script>
-    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/js/ngDialog.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.3.0/js/ngDialog.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-</head>
-<body class="popup">
-        <div>
-            <br>
-            <h3>AJOUTER UNE OFFRE</h3>
-            <br>
+<div class=" espace3 p-4 mb-3 rond formt shadow">
+    <div class="titleOf2">
+        <h3>AJOUTER UNE OFFRE eee</h3>
+    </div>
+    <div class="row p-4 mb-3">
+    <div class="col-md-6">
 
+        <!--
+        <div class="form-group row">
+            <label for="Sujet" class="col-md-3 col-form-label">Sujet : </label>
+            <div class="col-md-9">
+                <textarea class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Sujet"rows="6" ng-model="offre.sujet"></textarea>
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group row">
-                    <label for="Sujet" class="col-md-3 col-form-label">Sujet : </label>
-                    <div class="col-md-9">
-                        <textarea class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Sujet"rows="6" ng-model="offre.sujet"></textarea>
-                    </div>
+        -->
+        <div class="input-group mb-3 col row">
+            <div class="input-group-prepend span">
+                <span for="Sujet" class="input-group-text span3"> Sujet  </span>
+            </div>
+            <textarea class="form-control" id="Sujet" aria-describedby="Sujet" placeholder="Entrer le sujet" rows="10" ng-model="offre.sujet"></textarea>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <form>
+
+            <!--
+            <div class="form-group row">
+                <label for="Type" class="col-md-3 col-form-label">Type : </label>
+                <div class="col-md-9">
+                    <select class="custom-select" id="Type" ng-model="offre.type" required>
+                        <option value="stage">Stage</option>
+                        <option value="alternance">Alternance</option>
+                    </select>
                 </div>
             </div>
-            <div class="col-md-6">
-                <form>
-                    <div class="form-group row">
-                        <label for="Type" class="col-md-3 col-form-label">Type : </label>
-                        <div class="col-md-9">
-                            <select class="custom-select" id="Type" ng-model="offre.type" required>
-                                <option value="stage">Stage</option>
-                                <option value="alternance">Alternance</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Societe" class="col-md-3 col-form-label">Societe :</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="Societe" aria-describedby="Societe" placeholder="Societe" ng-model="offre.societe" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Adresse" class="col-md-3 col-form-label">Adresse : </label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="Adresse" aria-describedby="Adresse" placeholder="Adresse" ng-model="offre.adresse" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Tel" class="col-md-3 col-form-label">Tel : </label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="Tel" aria-describedby="Tel" placeholder="Téléphone" ng-model="offre.tel" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Mail" class="col-md-3 col-form-label">Mail : </label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control" id="Mail" aria-describedby="Mail" placeholder="Mail" ng-model="offre.mail" required>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+           -->
+            <div class="input-group mb-3 col row">
 
-        <div class="text-center p-3 mb-2">
-            <input class="btn btn-color" type="submit" ng-click="submitOffer(offre)" value="Envoyer">
-        </div>
-    </body>
-</html>
+                <div class="input-group-prepend span">
+                    <label class="input-group-text span3" for="Type">Type</label>
+                </div>
+                    <select class="custom-select" id="Type" ng-model="offre.type" required>
+                        <option value="stage">Stage</option>
+                        <option value="alternance">Alternance </option>
+                    </select>
+            </div>
+
+
+
+            <!--
+            <div class="form-group row">
+                <label for="Societe" class="col-md-3 col-form-label">Societe :</label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="Societe" aria-describedby="Societe" placeholder="Societe" ng-model="offre.societe" required>
+                </div>
+            </div>
+            -->
+            <div class="input-group mb-3 col row">
+                <div class="input-group-prepend span">
+                    <span for="Societe" class="input-group-text span3" id="Nom"> Societe  </span>
+                </div>
+                <input type="text" class="form-control" id="Societe" aria-describedby="Societe" placeholder="Entrer le nom de la societe" ng-model="offre.societe" required>
+            </div>
+
+            <!--
+            <div class="form-group row">
+                <label for="Adresse" class="col-md-3 col-form-label">Adresse : </label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="Adresse" aria-describedby="Adresse" placeholder="Adresse" ng-model="offre.adresse" required>
+                </div>
+            </div>
+            -->
+            <div class="input-group mb-3 col row">
+                <div class="input-group-prepend span">
+                    <span for="Adresse" class="input-group-text span3"> Adresse </span>
+                </div>
+                <input type="text" class="form-control" id="Adresse" aria-describedby="Adresse" placeholder="Entrer l'adresse" ng-model="offre.adresse" required>
+            </div>
+
+
+            <!--
+            <div class="form-group row">
+                <label for="Tel" class="col-md-3 col-form-label">Tel : </label>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="Tel" aria-describedby="Tel" placeholder="Téléphone" ng-model="offre.tel" required>
+                </div>
+            </div>
+            -->
+            <div class="input-group mb-3 col row">
+                <div class="input-group-prepend span">
+                    <span for="Tel" class="input-group-text span3"> Tel </span>
+                </div>
+                <input type="text" class="form-control" id="Tel" aria-describedby="Tel" placeholder="Entrer le téléphone" ng-model="offre.tel" required>
+            </div>
+
+            <!--
+            <div class="form-group row">
+                <span for="Mail" class="col-md-3 col-form-label">Mail : </span>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="Mail" aria-describedby="Mail" placeholder="Mail" ng-model="offre.mail" required>
+                </div>
+            </div>
+            -->
+            <div class="input-group mb-3 col row">
+                <div class="input-group-prepend span">
+                    <span for="Mail" class="input-group-text span3"> E-mail </span>
+                </div>
+                <input type="text" class="form-control" id="Mail" aria-describedby="Mail" placeholder="Entrer l'adresse" ng-model="offre.mail" required>
+            </div>
+
+
+
+        </form>
+    </div>
+    <div class="text-center p-3 mb-2 ajoutO">
+        <input class="btn btn-color-inv" type="submit" ng-click="submitOffer(offre)" value="Envoyer">
+    </div>
+    </div>
+</div>
+

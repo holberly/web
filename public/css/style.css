@@ -7,11 +7,14 @@
 .espace2{
     padding-left: 10%;
     padding-right: 10%;
+}
 
+.espace3{
+    margin-top: 15px;
 }
 
 .texteraF{
-    border-color: #b18b2c !important;
+    border-color: #4ea283 !important;
 }
 
 .deco{
@@ -108,8 +111,8 @@ h3{
     background-color: #f8f8f8;
     margin-left: 5px;
     margin-top:5px;
-    width: 750px;
-    height: 400px;
+    width: 820px;
+    height: 475px;
 }
 
 
@@ -147,7 +150,7 @@ h3{
 }
 
 .titelQues h4, h3{
-    color:#b18b2c;
+    color:#4ea283;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -204,7 +207,7 @@ h3{
 */
 
 .ngdialog{
-    padding-top: 10% !important;
+    padding-top: 6% !important;
     padding-left: 25% !important;
     background-color: #28a7456b !important;
 }
@@ -221,3 +224,75 @@ div>.ngdialog-content button{
     display: none;
 }
 */
+
+
+.span{
+    width: 22%;
+}
+
+.span3{
+    width: 100%;
+    text-align: center;
+    background-color: #4ea283 !important;
+    color: white !important;
+}
+
+.btn-link:active,.btn-link:hover{
+    text-decoration: none !important;
+}
+
+.titelFor{
+    color: #4ea283 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+}
+
+.card-body{
+    color: black;
+}
+
+.homeCard{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.formatText{
+    color: #000000b8 !important;
+}
+
+.titleOf{
+    color: black !important;
+    font-style : normal !important;
+}
+
+.offre{
+    background-color: #17171740;
+}
+
+.titleOf2{
+    width: 100% !important;
+    text-align: center !important;
+}
+
+.titleOf3{
+    color: white !important;
+    font-style : normal !important;
+}
+
+.titleOf4{
+    color: white;
+    font-style : italic !important;
+}
+
+.texti{
+    font-style : italic !important;
+}
+
+.textc{
+   color: white;
+    font-style : italic !important;
+}
+
+.ajoutO{
+    width: 100%;
+}
