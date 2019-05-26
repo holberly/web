@@ -34,7 +34,7 @@ body header img{
 .header-inner-menu {
     display: table; ;
     width: 100% ;
-    max-width: 1100px ;
+    max-width: 1200px ;
     margin: 0 auto ; /* on centre l'élément */
     padding: 20px 25px ; /* on ventile un peu */
 }
@@ -60,7 +60,7 @@ body header img{
 .header-nav-menu a {
     position: relative !important;
     display: inline-block !important;
-    padding: 8px 15px !important;
+    padding: 8px 4px !important;
     vertical-align: middle !important;
     font-weight: bold !important;
     letter-spacing: 0.025em !important;
