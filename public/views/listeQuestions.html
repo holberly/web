@@ -1,0 +1,59 @@
+<!-- ///////////////////////// Bloc historiques des questions ///////////////////////// -->
+<div class="espace">
+
+    <!-- ///////////////////////// Bloc saisie question ///////////////////////// -->
+    <div class="row">
+        <div class="col-md-12 espace2">
+            <div id="formQuest" class="card shadow rond text-center p-3 mb-5">
+                <div>
+                    <div class="card-header titelQues">
+                        <h4> Posez votre question</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="input-group">
+                            <textarea id="Question" id="form-text" class="texteraF form-control" placeholder="Écrivez votre question ici..." rows="3" ng-model="contenu"></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <input type="submit" class="btn btn-color" ng-click="submitQuestion(contenu)" value="Envoyer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 titelQues shadow rond formt p-3">
+        <h3> Les questions posées </h3>
+        <table class="table">
+            <thead>
+
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in messages">
+                    <td>
+                        <div class="list-group-item flex-column align-items-start offre">
+                            <div class="d-flex w-100 justify-content-between rond">
+                                <h5 class="mb-1 titleOf3"> Question </h5>
+                                <small class="badge badge-primary badge-pill">le {{item.horadatage_msg}}</small>
+                            </div>
+                            <p class="mb-1  p-1 titleOf3">{{item.contenu}}</p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div class="list-group-item flex-column align-items-start offre">
+                            <div class="d-flex w-100 justify-content-between rond">
+                                <h5 class="mb-1 titleOf3"> Réponse </h5>
+                            </div>
+                            <p class="mb-1 p-1 titleOf4">{{item.reponse}}</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>

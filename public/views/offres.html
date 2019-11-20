@@ -1,0 +1,31 @@
+ <div class="row espace3 p-4 mb-2 rond formt shadow">
+     <div class="titleOf2">
+         <h3> Les offres de stages et d'alternances </h3>
+     </div>
+
+
+            <!-- /////////////////////////  Bloc barre des offres de stages et alternances ///////////////////////// -->
+     <div class="col-md-12">
+     <table>
+           <tr ng-repeat="item in offres">
+               <td>
+                   <div class="row shadow p-3 mb-3 rond offre">
+                    <!--<a href="detailOffre.html" class="list-group-item list-group-item-action flex-column align-items-start">-->
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1 titleOf3">{{item.nom_societe}}</h5>
+                            <small class="badge badge-primary badge-pill">{{item.type}}</small>
+                        </div>
+                        <p class="mb-1">{{item.sujet}}<br><br>
+                            <small class="badge badge-primary badge-pill">Mail :</small> {{item.tel_contact}} <br>
+                            <small class="badge badge-primary badge-pill">Téléphone :</small> {{item.mail_contact}} <br>
+                            <small class="badge badge-primary badge-pill">Adresse :</small> {{item.adresse}}</p><br>
+
+                       <!--<small class="btn btn-color btn-sm btn-block"> En savoir sur l'offre...</small>
+                   </a>-->
+                   </div>
+                 </td>
+           </tr>
+     </table>
+     </div>
+ </div>
+
